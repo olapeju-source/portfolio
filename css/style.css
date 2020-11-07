@@ -475,6 +475,18 @@ textarea {
   border-radius: 5px;
   padding-left: 10px;
 }
+
+#contact .contactA .contactA-2 form input[type="text"]:focus{
+  border: 2px solid lightblue;
+  box-shadow: 0px 5px 10px -12px rgb(26, 25, 25);
+}
+
+#contact .contactA .contactA-2 form textarea:focus{
+  border: 2px solid lightblue;
+  box-shadow: 0px 5px 10px -12px rgb(26, 25, 25);
+}
+
+
 #contact .contactA .contactA-2 form textarea {
   resize: vertical;
 }
@@ -483,7 +495,7 @@ textarea {
 textarea::placeholder {
   font-size: 18px;
   text-transform: capitalize;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: sans-serif;
 }
 
 #contact .contactA .contactA-2 form .btn-2 {
