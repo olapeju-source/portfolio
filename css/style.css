@@ -31,7 +31,7 @@ img {
   height: 100%;
 }
 .container {
- max-width: 95%;
+  max-width: 95%;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -69,7 +69,6 @@ header .opacity {
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
 }
 
 #mobile-nav {
@@ -283,7 +282,20 @@ header .main-head2 .btn:hover {
     transform: translateX(0%);
   }
 }
+#port .portA .port-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 65px;
+}
 
+#port .portA .port-head h2 {
+  font-size: 35px;
+  text-transform: uppercase;
+}
+
+/* port row */
 #port .portA .port-head .row {
   display: flex;
   flex-direction: column;
@@ -292,61 +304,56 @@ header .main-head2 .btn:hover {
   margin-top: 30px;
 }
 
-#port .row h5 {
+#port .portA .port-head .row h5 {
   font-size: 20px;
   padding-bottom: 20px;
   text-transform: uppercase;
   text-align: center;
 }
 
-#port .row ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-#port .row ul li {
-  padding: 10px;
-  background-color: yellow;
+#port .portA .port-head .row ul li {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: white;
   margin-right: 5px;
-  border-radius: 6px;
-}
-
-#port .row ul li a {
+  border-radius: 3px;
   font-size: 15px;
-  color: black;
   font-weight: bold;
+  cursor: pointer;
 }
 
-#port .row ul li:hover {
-  background-color: rgb(201, 198, 198);
+#port .portA .port-head .row ul li:hover {
+  background-color: #ddd;
 }
 
-#port .portA .port-head {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 30px;
+#port .portA .port-head .row ul li.active {
+  background-color: yellow;
 }
-
-#port .portA .port-head h2 {
-  font-size: 35px;
-  text-transform: uppercase;
-}
-
+/*portA-3*/
 #port .portA .portA-3 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /*display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 25px;
-  padding-bottom: 30px;
+  padding-bottom: 30px;*/
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
+
 #port .portA .portA-3 .portA-4 {
-  background-color: #fff;
+  width: 26%;
+  min-width: 250px;
+  height: 250px;
+  text-align: center;
+  cursor: pointer;
   box-shadow: 9px 9px 15px -12px rgb(26, 25, 25);
-  margin-top: 20px;
-}
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 50px;
+ 
+  padding: 0px 0px 400px 0px;
+ }
+
 #port .portA .portA-3 .portA-4a {
   position: relative;
   overflow: hidden;
@@ -354,7 +361,10 @@ header .main-head2 .btn:hover {
 
 #port .portA .portA-3 .portA-4 .portA-4a img {
   width: 100%;
-  height: 100%;
+  height: 300px;
+  display: block;
+  object-position: top;
+  object-fit: cover;
 }
 
 #port .portA .portA-3 .portA-4 .portA-4a::after {
@@ -376,7 +386,7 @@ header .main-head2 .btn:hover {
   top: 0;
 }
 
-#port .portA .portA-3 .portA-4 .portA-4a h3 {
+#port .portA .portA-3 .portA-4 .portA-4a .text {
   position: absolute;
   color: #fff;
   left: 0;
@@ -385,11 +395,10 @@ header .main-head2 .btn:hover {
   bottom: 0;
   z-index: 4;
   display: none;
-  font-size: 20px;
-  text-transform: uppercase;
+  transition: all 0.5s ease-in-out;
 }
 
-#port .portA .portA-3 .portA-4 .portA-4a:hover h3 {
+#port .portA .portA-3 .portA-4 .portA-4a:hover .text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -397,26 +406,39 @@ header .main-head2 .btn:hover {
   text-align: center;
 }
 
+#port .portA .portA-3 .portA-4 .portA-4a:hover .text i {
+  color: #bebbbb;
+  font-size: 20px;
+}
+
+#port .portA .portA-3 .portA-4 .portA-4a:hover .text i:hover {
+  color: yellow;
+}
+
 #port .portA .portA-1 .portA-1:nth-child(2n + 1) {
   padding-top: 30px;
 }
 
 #port .portA .portA-3 .portA-4 .portA-4b {
-  padding: 50px 0;
+  padding: 30px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   /*margin-top: 40px;*/
   text-transform: uppercase;
+ 
+ 
+ 
+  
 }
 
 #port .portA .portA-3 .portA-4 .portA-4b h5 {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #port .portA .portA-3 .portA-4 .portA-4b p {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /*contact*/
@@ -476,16 +498,15 @@ textarea {
   padding-left: 10px;
 }
 
-#contact .contactA .contactA-2 form input[type="text"]:focus{
+#contact .contactA .contactA-2 form input[type="text"]:focus {
   border: 2px solid lightblue;
   box-shadow: 0px 5px 10px -12px rgb(26, 25, 25);
 }
 
-#contact .contactA .contactA-2 form textarea:focus{
+#contact .contactA .contactA-2 form textarea:focus {
   border: 2px solid lightblue;
   box-shadow: 0px 5px 10px -12px rgb(26, 25, 25);
 }
-
 
 #contact .contactA .contactA-2 form textarea {
   resize: vertical;

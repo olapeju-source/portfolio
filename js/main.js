@@ -108,33 +108,56 @@ for (var i = 0; i < color.length; i++) {
     $("#mobile-nav, #mobile-nav-toggle").hide();
   }
 
-  $(".nav-bar a, .btn a, #mobile-nav a, .row a, .arrowup a, .list a").on(
-    "click",
-    function() {
-      if (this.hash !== "") {
-        event.preventDefault();
+  $(
+    ".nav-bar a, .btn a, #mobile-nav a, .row a, .arrowup a, .list a, .button a"
+  ).on("click", function() {
+    if (this.hash !== "") {
+      event.preventDefault();
 
-        const hash = this.hash;
+      const hash = this.hash;
 
-        $("html, body").animate(
-          {
-            scrollTop: $(hash).offset().top - 50
-          },
-          800
-        );
-        if ($(this).parents(".nav-menu").length) {
-          $(".nav-menu .menu-active").removeClass("menu-active");
-          $(this)
-            .closest("li")
-            .addClass("menu-active");
-        }
+      $("html, body").animate(
+        {
+          scrollTop: $(hash).offset().top - 50
+        },
+        800
+      );
+      if ($(this).parents(".nav-menu").length) {
+        $(".nav-menu .menu-active").removeClass("menu-active");
+        $(this)
+          .closest("li")
+          .addClass("menu-active");
+      }
 
-        if ($("body").hasClass("mobile-nav-active")) {
-          $("body").removeClass("mobile-nav-active");
-          $("#mobile-nav-toggle i").toggleClass("fa-times fa-bars");
-          $("#mobile-body-overly").fadeOut();
-        }
+      if ($("body").hasClass("mobile-nav-active")) {
+        $("body").removeClass("mobile-nav-active");
+        $("#mobile-nav-toggle i").toggleClass("fa-times fa-bars");
+        $("#mobile-body-overly").fadeOut();
       }
     }
-  );
+  });
 })(jQuery);
+
+//portfolio filter
+
+const buttons = document.querySelectorAll(".button");
+const section = document.querySelectorAll(".portA-4");
+
+buttons.forEach(item => {
+  item.addEventListener("click", () => {
+    buttons.forEach(item => {
+      item.className = "";
+    });
+    item.className = "active";
+
+    //filter
+    let values = item.textContent;
+    section.forEach(show => {
+      show.style.display = "none";
+
+      if (show.getAttribute("data-id") === values || values === "All") {
+        show.style.display = "block";
+      }
+    });
+  });
+});

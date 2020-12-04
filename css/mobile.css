@@ -9,7 +9,6 @@ body {
   height: 90px;
 }
 
-
 #navtop {
   display: none;
 }
@@ -167,12 +166,18 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 30px;
 }
 
-#port .portA .portA-3 {
-  grid-template-columns: 1fr;
+#port .portA .port-head .row ul li {
+  padding: 5px 8px;
 }
 
 #port .row h5 {
   font-size: 20px;
+}
+
+#port .portA .portA-3 .portA-4 {
+  width: 26%;
+  min-width: 290px;
+  height: 270px;
 }
 
 /*contact*/
